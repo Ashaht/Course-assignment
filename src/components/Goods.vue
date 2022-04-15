@@ -18,12 +18,20 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
+
 export default {
   name: 'HelloWorld',
   props: {
   },
   methods: {
+    ...mapActions(['addCart']),
     Add() {
+      const product = {};
+      product.iid = 3;
+      product.name = '中果汁';
+      product.price = 233;
+      this.addCart(product);
       alert("添加成功!");
     }
   }

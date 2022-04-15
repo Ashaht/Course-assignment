@@ -5,7 +5,8 @@
     <RegisterBar :isShow='regIsOpen' @close='CloseRegBar'/>
     <div id="nav">
       <router-link to="/">主页</router-link> |
-      <router-link to="/about">关于</router-link>
+      <router-link to="/about">关于</router-link> |
+      <router-link to="/cart">购物车</router-link>
     </div>
     <router-view/>
   </div>
