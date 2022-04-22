@@ -1,7 +1,7 @@
 <template>
   <div class="login">
-    <a class="sign" @click="OpenLogBar">登录</a>|
-    <a class="reg" @click="OpenRegBar">注册</a>
+    <el-button class="sign" type="primary" @click="OpenLogBar">登录</el-button>
+    <el-button class="reg" @click="OpenRegBar">注册</el-button>
   </div>
 </template>
 
@@ -21,8 +21,8 @@ export default {
 <style>
 .login {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 80px;
+  right: 20px;
   cursor: pointer;
 }
 </style>

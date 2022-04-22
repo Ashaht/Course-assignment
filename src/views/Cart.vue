@@ -1,10 +1,26 @@
 <template>
-  <h1>购物车</h1>
+  <div class="cart">
+    <CartTable/>
+  </div>
 </template>
 
 <script>
-export default {
+import CartTable from '@/views/CartChild/CartTable.vue'
+import { mapGetters } from 'vuex'
 
+export default {
+  data() {
+    return {}
+  },
+  methods: {
+    
+  },
+  computed: {
+    ...mapGetters(['cartLength','cartList']),
+  },
+  components: {
+    CartTable,
+  }
 }
 </script>
 

@@ -7,11 +7,11 @@
         <th>商品价格</th>
         <th>操作</th>
       </tr>
-      <tr>
-        <td>001</td>
-        <td>好果汁</td>
-        <td>198$</td>
-        <td><button @click='Add'>添加至购物车</button></td>
+      <tr v-for="(item, index) in goods" :key="index">
+        <td>{{item.iid}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price + '$'}}</td>
+        <td><button @click='Add(item)'>添加至购物车</button></td>
       </tr>
     </table>
   </div>
@@ -23,14 +23,20 @@ import {mapActions} from 'vuex'
 export default {
   name: 'HelloWorld',
   props: {
+    goods: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
   },
   methods: {
     ...mapActions(['addCart']),
-    Add() {
+    Add(item) {
       const product = {};
-      product.iid = 3;
-      product.name = '中果汁';
-      product.price = 233;
+      product.iid = item.iid;
+      product.name = item.name;
+      product.price = item.price;
       this.addCart(product);
       alert("添加成功!");
     }
